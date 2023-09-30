@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cruise Page
+        </title>
+    </head>
+ 
+<body>
+
+<h1>Sumanth Yeruva goes on a cruise</h1>
+<form>
+    <input type="checkbox" id="cb1" value="true" >  
+        <label for="cb1">Shares cabin</label></br>
+      
+    <input type="checkbox" id="cb2" value="true">
+        <label for="cb2">Breakfast</label></br>
+      
+    <input type="checkbox" id="cb3" value="false">  
+        <label for="cb3">Pool pass</label></br>
+
+    <input type="button" onclick="selectCruise()" value="Select a cruise">
+</form>
+
+<div id="Results"></div>
+<script>
+    var my_cruise={};
+    function selectCruise(){
+        my_cruise={};
+        my_cruise.shared=document.getElementById('cb1').checked;
+        my_cruise.breakfast=document.getElementById('cb2').checked;
+        my_cruise.pool=document.getElementById('cb3').checked;
+
+    }
+    document.getElementById('Results').innerHTML=my_cruise;
+</script>
+
+
+
+</body>
+</html> 
