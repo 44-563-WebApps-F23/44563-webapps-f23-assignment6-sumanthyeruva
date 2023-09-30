@@ -8,7 +8,7 @@
  
 <body>
 
-<h1>Shows tip amounts Sumanth yeruva</h1>
+<h1>Shows tip amounts Sumanth Yeruva</h1>
     
 
 <label for="base_Amount">Enter base amount</label>
@@ -19,7 +19,7 @@
 
   <button onclick="tips()">Show tip</button>
 
-  <div id="Results">Tips are:</div>
+  <div id="Results"></div>
 
   <script>
     function tips() {
@@ -33,6 +33,36 @@
       }
 
       document.getElementById('Results').innerHTML = 'Tips are: ' + myOutput;
+    }
+  </script>
+  <form>
+    <input type="radio" id="radio1"  value="sum" onclick="chooseOp()">
+        <label for="radio1">sum</label></br>
+    <input type="radio" id="radio2" value="difference" onclick="chooseOp()">   
+        <label for="radio2">diff</label></br>
+    <input type="radio" id="radio3" value="product" onclick="chooseOp()">    
+        <label for="radio3">product</label><br>
+
+  </form>
+  <div id="results"></div>
+  <script>
+    function chooseOp(){
+     const base = parseFloat(document.getElementById('base_Amount').value);
+     const percent = parseFloat(document.getElementById('tip_Percent').value);
+    if(document.getElementById('radio1').checked){
+        const sum = base+percent;
+        document.getElementById('results').innerHTML = 'Sum of '+base+' and '+percent+' is: '+sum;
+    }
+    else if(document.getElementById('radio2').checked)
+    {
+        const diff = base-percent;
+        document.getElementById('results').innerHTML = 'Difference of '+ base+' and '+percent+ ' is:'+diff;
+    }
+    else{
+        const product = base*percent;
+        document.getElementById('results').innerHTML = 'Product of '+base+' and '+percent+' is:'+product;
+    }
+
     }
   </script>
 
