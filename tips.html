@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tips Page
+        </title>
+    </head>
+ 
+<body>
+
+<h1>Shows tip amounts Sumanth yeruva</h1>
+    
+
+<label for="base_Amount">Enter base amount</label>
+  <input type="number" id="base_Amount" value="50"><br>
+
+  <label for="tip_Percent">Enter the tip percent</label>
+  <input type="number" id="tip_Percent" value="15">
+
+  <button onclick="tips()">Show tip</button>
+
+  <div id="Results">Tips are:</div>
+
+  <script>
+    function tips() {
+      const base = parseFloat(document.getElementById('base_Amount').value);
+      const percent = parseFloat(document.getElementById('tip_Percent').value);
+      let myOutput = '';
+
+      for (let i = 0; i < 5; i++) {
+        const toShow = base * (percent + i * 4) / 100;
+        myOutput += `${percent + i * 4}% is ${toShow}; `;
+      }
+
+      document.getElementById('Results').innerHTML = 'Tips are: ' + myOutput;
+    }
+  </script>
+
+</body>
+</html> 
