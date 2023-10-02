@@ -2,3 +2,5 @@
 # WebApps-F23-Assignment-6
 Introduction to Java Script and DOM
 
+Hosted at (https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-sumanthyeruva/settings/pages)
+
