@@ -27,12 +27,34 @@
     var my_cruise={};
     function selectCruise(){
         my_cruise={};
-        my_cruise.shared=document.getElementById('cb1').checked;
-        my_cruise.breakfast=document.getElementById('cb2').checked;
-        my_cruise.pool=document.getElementById('cb3').checked;
-
+        my_cruise.shared=document.getElementById("cb1").checked;
+        my_cruise.breakfast=document.getElementById("cb2").checked;
+        my_cruise.pool=document.getElementById("cb3").checked;
+        document.getElementById('Results').innerHTML=JSON.stringify(my_cruise);
     }
-    document.getElementById('Results').innerHTML=my_cruise;
+    
+</script>
+
+<form>
+    <label for="cruise_property">Enter the number of days </label>
+    <input type ="text" id="cruise_property" value=days> <br>
+
+    <label for="cruise_price">Enter the price </label>
+    <input type ="text" id="cruise_price" autofocus> <br>
+
+    <input type="button" onclick="updateCruise()" value="Update the cruise">
+</form>
+
+<script>
+    function updateCruise()
+    {
+        let days=document.getElementById("cruise_property").value;
+        let price=document.getElementById("cruise_price").value;
+        my_cruise.days=days;
+        my_cruise.price=price;
+        document.getElementById('Results').innerHTML=JSON.stringify(my_cruise);
+        
+    }
 </script>
 
 
